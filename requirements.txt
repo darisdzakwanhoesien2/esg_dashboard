@@ -1,0 +1,11 @@
+streamlit
+pandas
+plotly
+altair
+PyMuPDF
+wordcloud
+spacy
+sentence-transformers
+scikit-learn
+textdistance
+weasyprint
