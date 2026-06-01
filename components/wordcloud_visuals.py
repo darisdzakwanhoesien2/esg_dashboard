@@ -1,4 +1,4 @@
 import streamlit as st
 
 def render(csv_file):
-    st.write("Wordcloud Visuals component goes here.")
+    st.info("Word cloud visuals are not implemented yet.")

@@ -6,9 +6,13 @@ def render():
     csv_file = st.file_uploader("Upload Extracted Text (CSV)", type=["csv"])
     
     if csv_file:
+        # Read once to validate schema; the main app will re-use cached reads downstream.
         df = pd.read_csv(csv_file)
         if "page_number" not in df.columns or "extracted_text" not in df.columns:
             st.error("CSV must include 'page_number' and 'extracted_text' columns.")
+            return None, None
+        if df.empty:
+            st.error("CSV file is empty.")
             return None, None
     
     return pdf_file, csv_file
